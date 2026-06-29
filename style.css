@@ -1,0 +1,297 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:linear-gradient(135deg,#ffe6f0,#f3e5ff,#e6f7ff);
+    overflow-x:hidden;
+    color:#333;
+}
+
+/* Flower Background */
+
+#flowers{
+    position:fixed;
+    width:100%;
+    height:100%;
+    left:0;
+    top:0;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:-1;
+}
+
+/* Navbar */
+
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    background:rgba(255,255,255,.2);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+}
+
+nav{
+    width:90%;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 0;
+}
+
+.logo{
+    color:#c2185b;
+    font-size:28px;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav ul li{
+    margin-left:25px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:#444;
+    font-weight:500;
+    transition:.3s;
+}
+
+nav ul li a:hover{
+    color:#e91e63;
+}
+
+/* Sections */
+
+section{
+    min-height:100vh;
+    padding:120px 8%;
+}
+
+h2{
+    text-align:center;
+    color:#c2185b;
+    margin-bottom:40px;
+    font-size:35px;
+}
+
+/* Home */
+
+.home-content{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:60px;
+    flex-wrap:wrap;
+}
+
+.profile-image img{
+    width:280px;
+    height:280px;
+    border-radius:50%;
+    border:8px solid white;
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+    transition:.5s;
+}
+
+.profile-image img:hover{
+    transform:scale(1.05);
+}
+
+.intro{
+    max-width:500px;
+}
+
+.intro h1{
+    font-size:50px;
+    color:#c2185b;
+}
+
+.intro h3{
+    margin:15px 0;
+    color:#555;
+}
+
+.intro p{
+    line-height:1.8;
+}
+
+button{
+    margin-top:30px;
+    padding:14px 30px;
+    border:none;
+    border-radius:40px;
+    background:#e91e63;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:.4s;
+}
+
+button:hover{
+    transform:translateY(-5px);
+    background:#c2185b;
+}
+
+/* Cards */
+
+.card,
+.project-card,
+.contact-card,
+.certificate-box{
+    background:rgba(255,255,255,.35);
+    backdrop-filter:blur(10px);
+    border-radius:20px;
+    padding:30px;
+    margin:20px auto;
+    width:80%;
+    box-shadow:0 10px 20px rgba(0,0,0,.15);
+    transition:.4s;
+}
+
+.card:hover,
+.project-card:hover,
+.contact-card:hover,
+.certificate-box:hover{
+    transform:translateY(-8px);
+}
+
+/* Skills */
+
+.skills-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:25px;
+}
+
+.skill-box{
+    background:white;
+    border-radius:20px;
+    padding:30px;
+    text-align:center;
+    font-size:22px;
+    font-weight:600;
+    box-shadow:0 8px 20px rgba(0,0,0,.1);
+    transition:.4s;
+}
+
+.skill-box:hover{
+    background:#e91e63;
+    color:white;
+    transform:scale(1.08);
+}
+
+/* Certificates */
+
+#certificates{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.certificate-box{
+    width:60%;
+    text-align:center;
+}
+
+/* Footer */
+
+footer{
+    background:#c2185b;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+/* Falling Flower */
+
+.flower{
+    position:absolute;
+    top:-50px;
+    font-size:25px;
+    animation:fall linear forwards;
+}
+
+@keyframes fall{
+
+0%{
+transform:translateY(-50px) rotate(0deg);
+opacity:1;
+}
+
+100%{
+transform:translateY(110vh) rotate(360deg);
+opacity:0;
+}
+
+}
+
+/* Fade Animation */
+
+.card,
+.project-card,
+.skill-box,
+.contact-card,
+.certificate-box{
+    animation:fadeUp 1s ease;
+}
+
+@keyframes fadeUp{
+
+0%{
+opacity:0;
+transform:translateY(40px);
+}
+
+100%{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.home-content{
+flex-direction:column;
+}
+
+nav ul{
+display:none;
+}
+
+.profile-image img{
+width:220px;
+height:220px;
+}
+
+.intro h1{
+font-size:38px;
+}
+
+.card,
+.project-card,
+.contact-card,
+.certificate-box{
+width:100%;
+}
+
+}
